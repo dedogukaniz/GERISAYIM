@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>20 Temmuz 2026 Geri Sayım</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      margin-top: 50px;
+      font-size: 2.5em;
+    }
+    #countdown {
+      font-size: 2em;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>20 Temmuz 2026'ya Geri Sayım</h1>
+  <div id="countdown"></div>
+
+  <script>
+    // Hedef tarih
+    const targetDate = new Date("July 20, 2026 00:00:00").getTime();
+
+    // Her saniye güncelle
+    const timer = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      // Gün, saat, dakika, saniye hesapla
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        days + " Gün " + hours + " Saat " + minutes + " Dakika " + seconds + " Saniye";
+
+      // Tarih geçtiyse
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "Tarih Geldi!";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
