@@ -20,6 +20,30 @@
       font-size: 2em;
       margin-top: 20px;
     }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      text-align: center;
+      margin: 0;
+      padding: 50px;
+    }
+    .frame-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px; /* iki çerçeve arası boşluk */
+    }
+    .frame {
+      border: 5px solid #2a5298;
+      padding: 10px;
+      background: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .frame img {
+      max-width: 300px;
+      height: auto;
+      display: block;
+    }
+
   </style>
 </head>
 <body>
@@ -52,8 +76,19 @@
       }
     }, 1000);
   </script>
+   <h1>Fotoğraflar</h1>
+  <div class="frame-container">
+    <div class="frame">
+      <img src="foto1.jpg" alt="Birinci fotoğraf">
+    </div>
+    <div class="frame">
+      <img src="foto2.jpg" alt="İkinci fotoğraf">
+    </div>
+  </div>
+
 </body>
 
 </html>
+
 
 
